@@ -14,16 +14,29 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
     }
 
     public function _initRoute(Yaf_Dispatcher $dispatcher) {
-         $router = Yaf_Dispatcher::getInstance()->getRouter();
-         $router->addConfig(Yaf_Registry::get("config")->routes);
-#         $route = new Yaf_Route_Rewrite(
-#     　　    'product/:name/:value',
-#     　　    array(
-#         　　　　'controller' => 'Index',
-#         　　　　'action' => 'index'
-#         　　)
-#         );
-#         $router->addRoute('product', $route);
+        $router = Yaf_Dispatcher::getInstance()->getRouter();
+        // add some pre-defined routes here
+        $router->addConfig(Yaf_Registry::get("config")->routes);
+
+        //  http://***/product/list/22/foo
+        //    [module] =>
+        //    [controller] => product
+        //    [action] => info
+        //    [method] => GET
+        //    [params:protected] => Array
+        //        (
+        //            [id] => 22
+        //            [name] => foo
+        //        )
+
+        $route = new Yaf_Route_Rewrite(
+     　    '/product/list/:id/:name',
+     　    array(
+        　　　　'controller' => 'product',
+        　　　　'action' => 'info'
+        　　)
+        );
+        $router->addRoute('dummy', $route);
     }
 
     public function _initView(Yaf_Dispatcher $dispatcher) {
