@@ -1,6 +1,6 @@
 <?php
 class IndexController extends Yaf_Controller_Abstract {
-      public function indexAction() {  
+      public function indexAction() {
           // getView(): fooAction get /views/foo/foo.phtml
           $cursor = Database::getInstance();
           $rows = $cursor->query('SELECT role_job FROM tbllog_create;');
