@@ -16,6 +16,14 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
     public function _initRoute(Yaf_Dispatcher $dispatcher) {
          $router = Yaf_Dispatcher::getInstance()->getRouter();
          $router->addConfig(Yaf_Registry::get("config")->routes);
+#         $route = new Yaf_Route_Rewrite(
+#     　　    'product/:name/:value',
+#     　　    array(
+#         　　　　'controller' => 'Index',
+#         　　　　'action' => 'index'
+#         　　)
+#         );
+#         $router->addRoute('product', $route);
     }
 
     public function _initView(Yaf_Dispatcher $dispatcher) {
