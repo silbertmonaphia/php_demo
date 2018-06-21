@@ -1,7 +1,8 @@
 <?php
 class IndexController extends Yaf_Controller_Abstract {
-      public function indexAction() {
+      public function indexAction($name, $val) {
           // route args handling
+          // DB_Demo_
           // $name = $this->getRequest()->getParam('name');
           // $val = $this->getRequest()->getParam('value');
 

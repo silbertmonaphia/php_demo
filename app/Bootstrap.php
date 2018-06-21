@@ -42,9 +42,11 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
     public function _initView(Yaf_Dispatcher $dispatcher) {
     }
 
-    public function _initAutoload() {
+    public function _initLoader($dispatcher) {
         // register Composer
         // Yaf_Loader::import(APPLICATION_PATH . "/vendor/autoload.php");
+        Yaf_Loader::getInstance()->registerLocalNameSpace(array("DB"));
+
         // register database
         Yaf_Loader::import(APPLICATION_PATH . "/app/library/Database.php");
     }
