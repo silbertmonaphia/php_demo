@@ -30,11 +30,10 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
         //        )
 
         $route = new Yaf_Route_Rewrite(
-     　    '/product/list/:id/:name',
-     　    array(
-        　　　　'controller' => 'product',
-        　　　　'action' => 'info'
-        　　)
+            '/product/list/:id/:name',
+            array(
+                'controller' =>'index',
+                'action' => 'index')
         );
         $router->addRoute('dummy', $route);
     }
