@@ -4,8 +4,10 @@ class BaseController extends Yaf_Controller_Abstract {
           // Yaf_Controller_Abstract will invoke init() method automatically
           // when it's instantialized
           if ($this->getRequest()->isXmlHttpRequest()){
-          Yaf_Dispatcher::getInstance()->autoRender(False);
+              //Yaf_Dispatcher::getInstance()->autoRender(False);
+              Yaf_Dispatcher::getInstance()->disableView();
           }
+          Yaf_Dispatcher::getInstance()->disableView();
       }
       
       public function __errResponseJson($errcode = -1, $errmsg = 'failed') {
