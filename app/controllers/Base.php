@@ -17,3 +17,4 @@ class BaseController extends Yaf_Controller_Abstract {
             $res = array('errcode' => $errcode, 'errmsg' => $errmsg, 'data' => $data);
             $this->getResponse()->setBody(json_encode($res));
       }
+}
